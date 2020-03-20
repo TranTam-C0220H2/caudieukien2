@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 30px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="frames">
+    <h1>Do you love me?</h1>
+    <button id="yes" onclick="permanent()">Yes</button>
+    <button id="no" onmouseover="moveRandom()" style="position: absolute">No</button>
+</div>
+<script>
+    function permanent() {
+        alert('<3')
+    }
+
+    function moveRandom() {
+        let height = Math.random()*window.innerHeight;
+        let width = Math.random()*window.innerWidth;
+        document.getElementById('no').style.left = width + 'px';
+        document.getElementById('no').style.top = height + 'px';
+    }
+</script>
+</body>
+</html>

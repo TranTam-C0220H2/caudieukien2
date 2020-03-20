@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="yourHealth()">Kiểm tra sức khỏe</button>
+<script>
+    function yourHealth() {
+        let yourWeight = Number.parseFloat(prompt('Cân nặng:'));
+        let yourHeight = Number.parseFloat(prompt('Chiều cao:'));
+        if (yourBMI(yourWeight, yourHeight) < 18.5) {
+            alert('Underweight');
+        } else if (yourBMI(yourWeight, yourHeight) < 25) {
+            alert('Normal');
+        } else if (yourBMI(yourWeight, yourHeight) < 30) {
+            alert('OverWeight');
+        } else
+            alert('Obese');
+    }
+
+    function yourBMI(yourWeight, yourHeight) {
+        let yourBMI;
+        return yourBMI = yourWeight / yourHeight / yourHeight;
+    }
+</script>
+
+</body>
+</html>

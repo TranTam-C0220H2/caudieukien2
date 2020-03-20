@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+        function SaleCommission(sales) {
+            this.sales = sales;
+            this.checkSale = function () {
+                if (this.sales < 2000) {
+                    return alert('Không có tiền hoa hồng')
+                } else if (this.sales < 5000) {
+                    return alert('Tiền hoa hồng được hưởng theo mức 1 là: ' + this.sales * 0.02);
+                } else if (this.sales < 10000) {
+                    return alert('Tiền hoa hồng được hưởng theo mức 2 là: ' + this.sales * 0.05);
+                } else {
+                    return alert('Tiền hoa hồng được hưởng theo mức 3 là: ' + this.sales * 0.1);
+                }
+            };
+        }
+
+        function main() {
+            let yourSales = +document.getElementById('isSales').value;
+            let saleCommission = new SaleCommission(yourSales);
+            saleCommission.checkSale();
+        }
+    </script>
+</head>
+<body>
+<label>Doanh số bán hàng: <input type="number" id="isSales"></label>
+<button onclick="main()">Tiền hoa hồng</button>
+</body>
+</html>

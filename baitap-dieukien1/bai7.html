@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+        function ChargeTelephone(noiMang, ngoaiMang, nuocNgoai) {
+            this.noiMang = noiMang;
+            this.ngoaiMang = ngoaiMang;
+            this.nuocNgoai = nuocNgoai;
+            this.checkMoney = function () {
+                return alert('Tiền cước điện thoại: ' + (1000 * this.noiMang + 2000 * this.ngoaiMang + 10000 * this.nuocNgoai));
+            };
+        }
+
+        function main() {
+            let number1 = +document.getElementById('isNumber1').value;
+            let number2 = +document.getElementById('isNumber2').value;
+            let number3 = +document.getElementById('isNumber3').value;
+            let chargeTelephone = new ChargeTelephone(number1, number2, number3);
+            chargeTelephone.checkMoney();
+        }
+    </script>
+</head>
+<body>
+<label>Số phút gọi nội mạng: <input type="number" id="isNumber1"></label>
+<label>Số phút gọi ngoại mạng: <input type="number" id="isNumber2"></label>
+<label>Số phút gọi nước ngoài: <input type="number" id="isNumber3"></label>
+<button onclick="main()">Tiền cước điện thoại</button>
+</body>
+</html>

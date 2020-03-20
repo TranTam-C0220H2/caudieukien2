@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+        function checkMax() {
+            let number1 = +document.getElementById('isNumber1').value;
+            let number2 = +document.getElementById('isNumber2').value;
+            let number3 = +document.getElementById('isNumber3').value;
+            if (number1 > number2) {
+                if (number1 > number3) {
+                    alert('Số lớn nhất là ' + number1);
+                } else {
+                    alert('Số lớn nhất là ' + number3);
+                }
+            } else {
+                if (number2 > number3) {
+                    alert('Số lớn nhất là ' + number2);
+                } else {
+                    alert('Số lớn nhất là ' + number3);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<label>Số thứ nhất: <input type="number" id="isNumber1"></label>
+<label>Số thứ hai: <input type="number" id="isNumber2"></label>
+<label>Số thứ ba: <input type="number" id="isNumber3"></label>
+<button onclick="checkMax()">Max</button>
+</body>
+</html>

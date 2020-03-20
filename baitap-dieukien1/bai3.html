@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+        function checkNumber() {
+            let number = +document.getElementById('myNumber').value;
+            if (number > 0) {
+                alert(number + ' > 0');
+            } else if (number < 0) {
+                alert(number + ' < 0');
+            } else {
+                alert(number + ' = 0');
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="number" id="myNumber">
+<input type="button" onclick="checkNumber()" value="Kiểm tra">
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+        function RankStudent(testScore, midScore, finalScore) {
+            this.testScore = testScore;
+            this.midScore = midScore;
+            this.finalScore = finalScore;
+            this.checkRank = function () {
+                let mediumScore = (this.testScore + this.midScore * 2 + this.finalScore * 3) / 6;
+                if (mediumScore < 5) {
+                    return alert('Học lực yếu');
+                } else if (mediumScore < 6.5) {
+                    return alert('Học lực trung bình');
+                } else if (mediumScore < 8) {
+                    return alert('Học lực khá');
+                } else {
+                    return alert('Học lực giỏi');
+                }
+            };
+        }
+
+        function main() {
+            let score1 = +document.getElementById('isScore1').value;
+            let score2 = +document.getElementById('isScore2').value;
+            let score3 = +document.getElementById('isScore3').value;
+            let rankStudent = new RankStudent(score1, score2, score3);
+            rankStudent.checkRank();
+        }
+    </script>
+</head>
+<body>
+<label>Điểm bài kiểm tra <input type="number" id="isScore1"></label>
+<label>Điểm bài thi giữa kỳ <input type="number" id="isScore2"></label>
+<label>Điểm bài thi cuối kỳ <input type="number" id="isScore3"></label>
+<button onclick="main()">Xếp hạng học lực</button>
+</body>
+</html>

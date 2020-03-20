@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        table {
+            text-align: center;
+            color: blue;
+        }
+
+        div#vien {
+            border: black 2px solid;
+            width: 180px;
+        }
+        input#numberValue {
+            width: 160px;
+        }
+        input {
+            width: 40px;
+            height: 20px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="vien">
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="numberValue"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="clearValue()" value="C">
+            </td>
+            <td>
+                <input type="button" onclick="eraseValue()" value="<--">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="1">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="2">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="3">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="+">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="4">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="5">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="6">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="-">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="7">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="8">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="9">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="*">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value=".">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="0">
+            </td>
+            <td>
+                <input type="button" onclick="myEnd()" value="=">
+            </td>
+            <td>
+                <input type="button" onclick="myClick(this.value)" value="/">
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    function myClick(c) {
+        document.getElementById('numberValue').value += c;
+    }
+
+    function myEnd() {
+        let end = document.getElementById('numberValue').value;
+        document.getElementById('numberValue').value = eval(end);
+    }
+
+    function clearValue() {
+        document.getElementById('numberValue').value = null;
+    }
+
+    function eraseValue() {
+        let str = document.getElementById('numberValue').value;
+        document.getElementById('numberValue').value = str.substring(0, str.length - 1);
+    }
+    console.log(document.getElementById('myOne').value);
+</script>
+</body>
+</html>

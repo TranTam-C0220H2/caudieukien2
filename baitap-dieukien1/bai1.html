@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Nhập vào 2 số a và b, kiểm tra xem a có chia hết cho b hay không
+        function checkNumber() {
+            let isNumber1 = +document.getElementById('number1').value;
+            let isNumber2 = +document.getElementById('number2').value;
+            if (isNumber1 % isNumber2 === 0) {
+                alert('a chia hết cho b');
+            } else {
+                alert('a không chia hết cho b');
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Số a: <input type="number" id="number1"></label>
+    <label>Số b: <input type="number" id="number2"></label>
+    <input type="button" onclick="checkNumber()" value="Kiểm tra">
+<div></div>
+</body>
+</html>

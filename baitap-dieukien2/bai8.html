@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+        function Human(age) {
+            this.age = age;
+            this.checkHuman = function () {
+                if (Number.isInteger(this.age) && this.age > 0 && this.age < 120) {
+                    return 'Đây là tuổi của 1 người';
+                } else {
+                    return 'Đây không phải tuổi 1 người';
+                }
+            };
+        }
+
+        function main() {
+            let yourAge = +document.getElementById('isAge').value;
+            let human = new Human(yourAge);
+            alert(human.checkHuman());
+        }
+    </script>
+</head>
+<body>
+<label>Nhập số: <input type="number" id="isAge"></label>
+<button onclick="main()">Kiếm tra</button>
+</body>
+</html>

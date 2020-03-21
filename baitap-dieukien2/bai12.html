@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        //FVn = PV x (1 + i)^n
+        //FVn: giá trị của tương lai ở tháng thứ n
+        //PV: giá trị của số vốn vay tại thời điểm hiện tại
+        //i: lãi suất
+        function Compounding(month, loan, interestRate) {
+            this.month = month;
+            this.loan = loan;
+            this.interestRate = interestRate;
+            this.interest = function () {
+                return this.loan * Math.pow((1 + this.interestRate / 100), month);
+            };
+        }
+
+        function main() {
+            let n = +document.getElementById('isMonth').value;
+            let PV = +document.getElementById('isLoan').value;
+            let i = +document.getElementById('isInterestRate').value;
+            let compounding = new Compounding(n, PV, i);
+            alert('Số tiền phải trả khi hết hạn vay là: ' + compounding.interest());
+        }
+    </script>
+</head>
+<body>
+<label>Số tiền vay: <input type="number" id="isLoan"></label><br>
+<label>Số tháng vay: <input type="number" id="isMonth"></label><br>
+<label>Lãi suất: <input type="number" id="isInterestRate"> %</label><br>
+<button onclick="main()">Tính</button>
+</body>
+</html>

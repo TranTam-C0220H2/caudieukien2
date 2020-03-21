@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Viết chương trình tính giá điện.
+        //Viết chương trình tính tiền điện với chỉ số mới và chỉ số cũ Được nhập vào từ bàn phím.
+        // In ra màn hình chỉ số cũ, chỉ số mới và số tiền phải trả.
+        // Biết rằng 100 kWh đầu giá 1000, từ kWh 101 – 150 giá 1200, từ kWh 151 – 200 giá 2000, từ 201 trở lên giá 2500.
+        function Electricity(OldIndex, NewIndex) {
+            this.OldIndex = OldIndex;
+            this.NewIndex = NewIndex;
+            this.index = function () {
+                return this.NewIndex - this.OldIndex;
+            };
+            this.billElectricity = function () {
+                if (this.index() <= 100) {
+                    return 'Tiền điện: ' + this.index() * 1000;
+                } else if (this.index() <= 150) {
+                    return 'Tiền điện: ' + ((this.index() - 100) * 1200 + 100 * 1000);
+                } else if (this.index() <= 200) {
+                    return 'Tiền điện: ' + ((this.index() - 150) * 2000 + 50 * 1200 + 100 * 1000);
+                } else {
+                    return 'Tiền điện: ' + ((this.index() - 200) * 2500 + 50 * 2000 + 50 * 1200 + 100 * 1000);
+                }
+            };
+        }
+
+        function main() {
+            let oldIndex = +document.getElementById('isOldIndex').value;
+            let newIndex = +document.getElementById('isNewIndex').value;
+            let electricity = new Electricity(oldIndex, newIndex);
+            alert(electricity.billElectricity());
+        }
+    </script>
+</head>
+<body>
+<label>Chỉ số cũ: <input type="number" id="isOldIndex"></label><br>
+<label>Chỉ số mới: <input type="number" id="isNewIndex"></label><br>
+<button onclick="main()">Bill</button>
+</body>
+</html>

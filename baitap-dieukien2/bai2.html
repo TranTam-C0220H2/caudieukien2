@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Chuyển từ mét sang feet
+        function MConvertF(meter) {
+            this.meter = meter;
+            this.convert = function () {
+                return this.meter * 3.2808;
+            };
+        }
+
+        function main() {
+            let M = +document.getElementById('isMeter').value;
+            let mConvertF = new MConvertF(M);
+            document.getElementById('isFeet').innerHTML = mConvertF.convert();
+        }
+    </script>
+</head>
+<body>
+<label>Mét: <input type="number" oninput="main()" id="isMeter"></label>
+<div>Feet: <span id="isFeet"></span></div>
+</body>
+</html>

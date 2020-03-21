@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Viết chương trình tính thuế thu nhập cá nhân.
+        function Tax(salary, reduce) {
+            this.salary = salary;
+            this.reduce = reduce;
+            this.taxableMoney = function () {
+                return this.salary - this.reduce;
+            };
+            this.personalIncomeTax = function () {
+                if (this.taxableMoney() < 300) {
+                    return 'Không phải đóng thuế thu nhập cá nhân';
+                } else if (this.taxableMoney() < 500) {
+                    return 'Thuế thu nhập cá nhân là: ' + this.taxableMoney() * 0.05;
+                } else if (this.taxableMoney() < 1000) {
+                    return 'Thuế thu nhập cá nhân là: ' + this.taxableMoney() * 0.1;
+                } else {
+                    return 'Thuế thu nhập cá nhân là: ' + this.taxableMoney() * 0.2;
+                }
+            }
+        }
+
+        function main() {
+            let yourSalary = +document.getElementById('isSalary').value;
+            let yourReduce = +document.getElementById('isReduce').value;
+            let tax = new Tax(yourSalary, yourReduce);
+            alert(tax.personalIncomeTax());
+        }
+    </script>
+</head>
+<body>
+<label>Lương tháng: <input type="number" id="isSalary"></label>
+<label>Giảm trừ gia cảnh: <input type="number" id="isReduce"></label>
+<button onclick="main()">Tính thuế</button>
+</body>
+</html>

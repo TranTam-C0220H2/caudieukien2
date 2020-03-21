@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Chuyển từ độ C sang độ F.
+        function CConvertF(doC) {
+        this.doC = doC;
+        this.convert = function () {
+            return this.doC*1.8+32;
+            };
+        }
+        function main() {
+            let C = +document.getElementById('isdoC').value;
+            let cConvertF = new CConvertF(C);
+            document.getElementById('isdoF').innerHTML = cConvertF.convert();
+        }
+    </script>
+</head>
+<body>
+<label>Độ C: <input type="number" id="isdoC" oninput="main()"></label>
+<div>Độ F: <span id="isdoF"></span></div>
+</body>
+</html>

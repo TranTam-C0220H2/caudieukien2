@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+        function AreaRightTriangle(edge1, edge2) {
+            this.edge1 = edge1;
+            this.edge2 = edge2;
+            this.area = function () {
+                return this.edge1 * this.edge2 / 2;
+            };
+        }
+
+        function main() {
+            let yourEdge1 = +document.getElementById('isEdge1').value;
+            let yourEdge2 = +document.getElementById('isEdge2').value;
+            let areaRightTriangle = new AreaRightTriangle(yourEdge1, yourEdge2);
+            alert('Diện tích hình tam giác vuông là: ' + areaRightTriangle.area());
+        }
+    </script>
+</head>
+<body>
+<label>Cạnh góc vuông thứ nhất: <input type="number" id="isEdge1"></label><br>
+<label>Cạnh góc vuông thứ hai: <input type="number" id="isEdge2"></label><br>
+<button onclick="main()">Diện tích</button>
+</body>
+</html>

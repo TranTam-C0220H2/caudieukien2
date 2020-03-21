@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b
+        function AreaRectangle(edge1, edge2) {
+            this.edge1 = edge1;
+            this.edge2 = edge2;
+            this.area = function () {
+                return this.edge1 * this.edge2;
+            };
+        }
+
+        function main() {
+            let yourEdge1 = +document.getElementById('isEdge1').value;
+            let yourEdge2 = +document.getElementById('isEdge2').value;
+            let areaRectangle = new AreaRectangle(yourEdge1, yourEdge2);
+            alert('Diện tích hình chữ nhật là: ' + areaRectangle.area());
+        }
+    </script>
+</head>
+<body>
+<label>Cạnh a: <input type="number" id="isEdge1"></label><br>
+<label>Cạnh b: <input type="number" id="isEdge2"></label><br>
+<button onclick="main()">Diện tích</button>
+</body>
+</html>

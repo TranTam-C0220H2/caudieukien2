@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    //Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác
+        function Triangle(a, b, c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.checkTriangle = function () {
+                if (this.a > 0 && this.b > 0 && this.c > 0 && this.a + this.b > this.c && this.a + this.c > this.b && this.b + this.c > this.a) {
+                    return 'Đây là 3 cạnh của 1 tam giác';
+                } else {
+                    return 'Đây không phải là 3 cạnh của 1 tam giác';
+                }
+            };
+        }
+
+        function main() {
+            let edge1 = +document.getElementById('isEdge1').value;
+            let edge2 = +document.getElementById('isEdge2').value;
+            let edge3 = +document.getElementById('isEdge3').value;
+            let triangle = new Triangle(edge1, edge2, edge3);
+            alert(triangle.checkTriangle());
+        }
+    </script>
+</head>
+<body>
+<label>Cạnh a: <input type="number" id="isEdge1"></label><br>
+<label>Cạnh b: <input type="number" id="isEdge2"></label><br>
+<label>Cạnh c: <input type="number" id="isEdge3"></label><br>
+<button onclick="main()">Kiếm tra</button>
+</body>
+</html>
